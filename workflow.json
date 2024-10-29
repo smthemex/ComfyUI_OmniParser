@@ -1,0 +1,343 @@
+{
+  "last_node_id": 10,
+  "last_link_id": 16,
+  "nodes": [
+    {
+      "id": 4,
+      "type": "PreviewImage",
+      "pos": {
+        "0": 3533,
+        "1": -1546
+      },
+      "size": {
+        "0": 574.6349487304688,
+        "1": 655.5843505859375
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 8,
+      "type": "ImageBatch",
+      "pos": {
+        "0": 3487,
+        "1": -1684
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 13
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 14
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 3,
+      "type": "LoadImage",
+      "pos": {
+        "0": 2912,
+        "1": -1709
+      },
+      "size": {
+        "0": 493.2560729980469,
+        "1": 376.5313415527344
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "321.png",
+        "image"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "LoadImage",
+      "pos": {
+        "0": 2898,
+        "1": -1285
+      },
+      "size": {
+        "0": 505.76177978515625,
+        "1": 375.8511962890625
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            14
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "123 (1).png",
+        "image"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "OmniParser_Sampler",
+      "pos": {
+        "0": 3781,
+        "1": -1906
+      },
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "OP_MODEL",
+          "link": 16
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            12
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OmniParser_Sampler"
+      },
+      "widgets_values": [
+        0.9,
+        0.05,
+        0.1,
+        "easyocr",
+        "en",
+        "xyxy",
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "id": 10,
+      "type": "OmniParser_Loader",
+      "pos": {
+        "0": 3392,
+        "1": -1871
+      },
+      "size": {
+        "0": 315,
+        "1": 82
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "OP_MODEL",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OmniParser_Loader"
+      },
+      "widgets_values": [
+        "F:/test/ComfyUI/models/diffusers/microsoft/OmniParser/icon_caption_florence",
+        "pc"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 4137,
+        "1": -1910
+      },
+      "size": [
+        585.6609885803682,
+        1051.0718245611824
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 12,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "IMG0's Text Box ID 0: For you\nIMG0's Text Box ID 1: Following\nIMG0's Text Box ID 2: Search\nIMG0's Text Box ID 3: Home\nIMG0's Text Box ID 4: What\nIMG0's Text Box ID 5: happening?\nIMG0's Text Box ID 6: Ending todayl\nIMG0's Text Box ID 7: Get up to 50% off X Premium\nIMG0's Text Box ID 8: Explore\nIMG0's Text Box ID 9: Post\nIMG0's Text Box ID 10: Subscribe\nIMG0's Text Box ID 11: Notifications\nIMG0's Text Box ID 12: Matteo Spinelli @cubiq\nIMG0's Text Box ID 13: trying to recreate\nIMG0's Text Box ID 14: \"picture\nIMG0's Text Box ID 15: picture\" effect with just prompting in\nIMG0's Text Box ID 16: SD35L. considering no lora, no controlnet; no inpainting_ it's impressive\nIMG0's Text Box ID 17: What's happening\nIMG0's Text Box ID 18: Messages\nIMG0's Text Box ID 19: Polymarket\nIMG0's Text Box ID 20: 86,3%\nIMG0's Text Box ID 21: In Partnership\nIMG0's Text Box ID 22: LIVE\nIMG0's Text Box ID 23: Grok\nIMG0's Text Box ID 24: Bookmarks\nIMG0's Text Box ID 25: #Polymarket\nIMG0's Text Box ID 26: Track accurate real-time election forecasts:\nIMG0's Text Box ID 27: Promoted by Polymarket\nIMG0's Text Box ID 28: Jobs\nIMG0's Text Box ID 29: Trending\nIMG0's Text Box ID 30: Communities\nIMG0's Text Box ID 31: Moscow\nIMG0's Text Box ID 32: 46.2K\nIMG0's Text Box ID 33: Premium\nIMG0's Text Box ID 34: Sports . Trending\nIMG0's Text Box ID 35: TJ WATT\nIMG0's Text Box ID 36: Trending with Giants; Daniel\nIMG0's Text Box ID 37: Jones\nIMG0's Text Box ID 38: Verified Orgs\nIMG0's Text Box ID 39: Politics\nIMG0's Text Box ID 40: Trending\nIMG0's Text Box ID 41: Mexicans\nIMG0's Text Box ID 42: Profile\nIMG0's Text Box ID 43: 60.7K posts\nIMG0's Text Box ID 44: More\nIMG0's Text Box ID 45: Show more\nIMG0's Text Box ID 46: Who to follow\nIMG0's Text Box ID 47: Post\nIMG0's Text Box ID 48: Dreaming Tulpa\nIMG0's Text Box ID 49: MachinePix\nIMG0's Text Box ID 50: @MachinePix\nIMG0's Text Box ID 51: Follow\nIMG0's Text Box ID 52: Miniature Rodent Stereo Illumination\nIMG0's Text Box ID 53: (iMRSIV) and treadmill for\nIMG0's Text Box ID 54: @dreamingtulpa\nIMG0's Text Box ID 55: smthem\nIMG0's Text Box ID 56: neurobiology research at Northwestern University:\nIMG0's Text Box ID 57: MrNeRF\nIMG0's Text Box ID 58: @smthem183321\nIMG0's Text Box ID 59: Follow\nIMG0's Text Box ID 60: MouseGoggles\nIMG0's Text Box ID 61: @janusch_patas\nIMG0's Text Box ID 62: posts\nIMG0's Icon Box ID 63: a person holding a picture.\nIMG0's Icon Box ID 64: Refresh or reload.\nIMG0's Icon Box ID 65: a user profile or account.\nIMG0's Icon Box ID 66: Navigation Bar\nIMG0's Icon Box ID 67: GIF\nIMG0's Icon Box ID 68: Navigator\nIMG0's Icon Box ID 69: Image\nIMG0's Icon Box ID 70: R2D0, a character from a video game.\nIMG0's Icon Box ID 71: Home\nIMG0's Icon Box ID 72: More options\nIMG0's Icon Box ID 73: briefcase\nIMG0's Icon Box ID 74: the letter \"X\".\nIMG0's Icon Box ID 75: Settings or configuration.\nIMG0's Icon Box ID 76: Close\nIMG0's Icon Box ID 77: Decrease Bookmark.\nIMG0's Icon Box ID 78: Line Spacing\nIMG0's Icon Box ID 79: Search functionality.\nIMG0's Icon Box ID 80: Email\nIMG0's Icon Box ID 81: a microphone for voice input.\nIMG0's Icon Box ID 82: Notifications\nIMG0's Icon Box ID 83: Bookmark\n\nIMG1's Text Box ID 0: For you\nIMG1's Text Box ID 1: Following\nIMG1's Text Box ID 2: Search\nIMG1's Text Box ID 3: Home\nIMG1's Text Box ID 4: What\nIMG1's Text Box ID 5: happening?\nIMG1's Text Box ID 6: Ending todayl\nIMG1's Text Box ID 7: Get up to 50% off X Premium\nIMG1's Text Box ID 8: Explore\nIMG1's Text Box ID 9: Post\nIMG1's Text Box ID 10: Subscribe\nIMG1's Text Box ID 11: Notifications\nIMG1's Text Box ID 12: Show 70 posts\nIMG1's Text Box ID 13: What's happening\nIMG1's Text Box ID 14: Freepik\nIMG1's Text Box ID 15: @freepik\nIMG1's Text Box ID 16: Messages\nIMG1's Text Box ID 17: The wait is almost\nIMG1's Text Box ID 18: Al video generator coming to Freepik\nIMG1's Text Box ID 19: Polymarket\nIMG1's Text Box ID 20: In Partnership\nIMG1's Text Box ID 21: LIVE\nIMG1's Text Box ID 22: Grok\nIMG1's Text Box ID 23: Bookmarks\nIMG1's Text Box ID 24: #Polymarket\nIMG1's Text Box ID 25: Track accurate real-time election forecasts:\nIMG1's Text Box ID 26: Promoted by Polymarket\nIMG1's Text Box ID 27: Jobs\nIMG1's Text Box ID 28: Politics . Trending\nIMG1's Text Box ID 29: Communities\nIMG1's Text Box ID 30: Bannon\nIMG1's Text Box ID 31: 66.5K posts\nIMG1's Text Box ID 32: Premium\nIMG1's Text Box ID 33: Politics . Trending\nIMG1's Text Box ID 34: Mexicans\nIMG1's Text Box ID 35: 0.16\nIMG1's Text Box ID 36: 61.4K posts\nIMG1's Text Box ID 37: Verified Orgs\nIMG1's Text Box ID 38: 155\nIMG1's Text Box ID 39: 40K\nIMG1's Text Box ID 40: Politics\nIMG1's Text Box ID 41: Trending\nIMG1's Text Box ID 42: Moscow\nIMG1's Text Box ID 43: Profile\nIMG1's Text Box ID 44: Elon Musk\nIMG1's Text Box ID 45: @elonmusk\nIMG1's Text Box ID 46: 46.7K posts\nIMG1's Text Box ID 47: The right choice is clear as\nIMG1's Text Box ID 48: More\nIMG1's Text Box ID 49: Show more\nIMG1's Text Box ID 50: Trump\nIMG1's Text Box ID 51: KAMALA\nIMG1's Text Box ID 52: secure Borders\nIMG1's Text Box ID 53: OPEN DorDeRS\nIMG1's Text Box ID 54: Who to follow\nIMG1's Text Box ID 55: Post\nIMG1's Text Box ID 56: SAFE cities\nIMG1's Text Box ID 57: DEFUND\nIMG1's Text Box ID 58: POLICE\nIMG1's Text Box ID 59: Dreaming Tulpa\nIMG1's Text Box ID 60: FreE SpeecH\nIMG1's Text Box ID 61: TTHIS\nIMG1's Text Box ID 62: CENsORSHIP\nIMG1's Text Box ID 63: @dreamingtulpa\nIMG1's Text Box ID 64: Follow\nIMG1's Text Box ID 65: smthem\nIMG1's Text Box ID 66: SENSIBLE\nIMG1's Text Box ID 67: MorE INFLATION\nIMG1's Text Box ID 68: SPENDING\nIMG1's Text Box ID 69: THAT\nIMG1's Text Box ID 70: Yannic Kilcher\nIMG1's Text Box ID 71: @smthem183321\nIMG1's Text Box ID 72: Follow\nIMG1's Text Box ID 73: @ykilcher\nIMG1's Text Box ID 74: FaIR JustIce\nIMG1's Text Box ID 75: FARE\nIMG1's Text Box ID 76: day\nIMG1's Icon Box ID 77: Microsoft PowerPoint application.\nIMG1's Icon Box ID 78: a user profile or account.\nIMG1's Icon Box ID 79: a group of people working together.\nIMG1's Icon Box ID 80: Bookmark.\nIMG1's Icon Box ID 81: Home\nIMG1's Icon Box ID 82: Navigator\nIMG1's Icon Box ID 83: A group of people.\nIMG1's Icon Box ID 84: the letter \"X\".\nIMG1's Icon Box ID 85: A digital assistant or user profile.\nIMG1's Icon Box ID 86: More options\nIMG1's Icon Box ID 87: briefcase\nIMG1's Icon Box ID 88: Heart\nIMG1's Icon Box ID 89: Image\nIMG1's Icon Box ID 90: Close\nIMG1's Icon Box ID 91: Oval value of 84.\nIMG1's Icon Box ID 92: crowns or royalty.\nIMG1's Icon Box ID 93: More options\nIMG1's Icon Box ID 94: Find\nIMG1's Icon Box ID 95: More options\nIMG1's Icon Box ID 96: More options\nIMG1's Icon Box ID 97: Notifications\nIMG1's Icon Box ID 98: Email"
+      ]
+    }
+  ],
+  "links": [
+    [
+      11,
+      7,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      12,
+      7,
+      1,
+      5,
+      0,
+      "STRING"
+    ],
+    [
+      13,
+      3,
+      0,
+      8,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      9,
+      0,
+      8,
+      1,
+      "IMAGE"
+    ],
+    [
+      15,
+      8,
+      0,
+      7,
+      1,
+      "IMAGE"
+    ],
+    [
+      16,
+      10,
+      0,
+      7,
+      0,
+      "OP_MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7627768444385534,
+      "offset": [
+        -2680.1238935446954,
+        2028.3396573206019
+      ]
+    }
+  },
+  "version": 0.4
+}
