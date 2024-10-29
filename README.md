@@ -1,14 +1,42 @@
 # ComfyUI_OmniParser
 Try [OmniParser](https://github.com/microsoft/OmniParser) in ComfyUI which a simple screen parsing tool towards pure vision based GUI agent.
 
+----
 
-Example
+1.Installation
 -----
+  In the ./ComfyUI /custom_node directory, run the following:   
+```
+git clone https://github.com/smthemex/ComfyUI_OmniParser.git
+```  
+
+----
+  
+2.requirements  
+----
+
+```
+pip install -r requirements.txt
+
+```
+
+----
+
+3.Checkpoints
+----
+[huggingface-OmniParser](https://huggingface.co/microsoft/OmniParser)
+
+----
+
+4.Example
+----
  
  ![](https://github.com/smthemex/ComfyUI_OmniParser/blob/main/example.png)
 
 
-Citation
+----
+
+5.Citation
 ------
 microsoft/OmniParser
 ```
