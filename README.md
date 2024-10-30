@@ -50,3 +50,4 @@ microsoft/OmniParser
       url={https://arxiv.org/abs/2408.00203}, 
 }
 ```
+Some codes form [#](https://github.com/microsoft/OmniParser/pull/53) @aliencaocao
