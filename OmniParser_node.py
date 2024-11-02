@@ -91,7 +91,7 @@ class OmniParser_Sampler:
                     "step": 0.01,
                     "display": "number", }),
                 "orc_model": (["easyocr", "paddleocr"],),
-                "orc_mode": (["en", "'ch_sim','en'"],),
+                "orc_mode": (["en","ch_sim","ch_tra","ja","ko","ta","te","kn","th","ru","ar","hi"],),
                 "output_bb_format": (["xyxy", "xywh"],),
                 "display_img": ("BOOLEAN", {"default": False},),
                 "paragraph": ("BOOLEAN", {"default": False},),
@@ -117,10 +117,27 @@ class OmniParser_Sampler:
             ORC = easyocr.Reader([orc_mode])
             use_paddleocr = False
         else:
+            if orc_mode=="ch_sim":
+                orc_mode="ch"
+            elif orc_mode=="ch_tra":
+                orc_mode = "chinese_cht"
+            elif orc_mode=="ko":
+                orc_mode = "korean"
+            elif orc_mode=="ja":
+                orc_mode = "japan"
+            elif orc_mode=="ru":
+                orc_mode = "cyrillic"
+            elif orc_mode == "ar":
+                orc_mode = " arabic"
+            elif orc_mode == "en":
+                orc_mode = "en"
+            elif orc_mode == "hi":
+                orc_mode = "devanagari"
+            else:
+                orc_mode = "latin"
+                
             use_paddleocr = True #another choice
             from paddleocr import PaddleOCR
-            if orc_mode=="'ch_sim','en'":
-                orc_mode="ch"
             ORC = PaddleOCR(
                 lang=orc_mode,  # other lang also available
                 use_angle_cls=False,
